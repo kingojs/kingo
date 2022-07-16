@@ -1,0 +1,27 @@
+{
+  "name": "kingo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/memburg/kingo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/memburg/kingo/issues"
+  },
+  "homepage": "https://github.com/memburg/kingo#readme",
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
+}

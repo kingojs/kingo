@@ -1,0 +1,1 @@
+export { __bundle } from './bundle';
