@@ -1,5 +1,7 @@
-const __bundle = () => {
-    console.log('__bundle');
+import { Config } from './Config'
+
+const __bundle = (bundleConfig: Config): void => {
+    console.log(bundleConfig);
 };
 
 export { __bundle };
