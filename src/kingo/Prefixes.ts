@@ -1,8 +1,9 @@
 interface Prefixes {
-    prerequestScript: string | null | undefined;
+    pr: string | null | undefined;
     body: string | null | undefined;
-    tests: string | null | undefined;
-    markdown: string | null | undefined;
+    docs?: string | null | undefined;
+    tests?: string | null | undefined;
+    variables?: string | null | undefined;
 }
 
 export { Prefixes };
