@@ -1,9 +1,9 @@
 import { Prefixes } from './Prefixes'
 
 interface Config {
-    prefixes: Prefixes;
-    collection: string;
+    root: string;
     APIS: string[] | "*";
+    prefixes: Prefixes;
 }
 
 export { Config };
