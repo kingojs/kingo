@@ -1,1 +1,1 @@
-export { __bundle } from './bundle';
+export { __kingonize } from './kingonize'

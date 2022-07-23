@@ -10,12 +10,12 @@
  * @variables {string | null | undefined} variables prefix
  */
 interface Prefixes {
-    url: string;
-    pr?: string | null | undefined;
-    body?: string | null | undefined;
-    docs?: string | null | undefined;
-    tests?: string | null | undefined;
-    variables?: string | null | undefined;
+    url: string
+    pr?: string | null | undefined
+    body?: string | null | undefined
+    docs?: string | null | undefined
+    tests?: string | null | undefined
+    variables?: string | null | undefined
 }
 
-export { Prefixes };
+export { Prefixes }

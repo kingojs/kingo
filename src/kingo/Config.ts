@@ -10,9 +10,9 @@ import { Prefixes } from './Prefixes'
  * @prefixes {Prefixes} file name for each feature
  */
 interface Config {
-    root: string;
-    APIS: string[] | "*";
-    prefixes: Prefixes;
+    root: string
+    APIS: string[] | "*"
+    prefixes: Prefixes
 }
 
-export { Config };
+export { Config }
