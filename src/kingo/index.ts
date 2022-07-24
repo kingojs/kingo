@@ -1,1 +1,1 @@
-export { __kingonize } from './kingonize'
+export { kingonize } from './kingonize'

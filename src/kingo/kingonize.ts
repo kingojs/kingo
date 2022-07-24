@@ -1,5 +1,5 @@
-import { Config } from './Config'
-import { __handleErrors, __createTree } from './Utils'
+import { Config } from './Interfaces/Config'
+import { __createCollection } from './utilities/__createCollection'
 
 /**
  * Creates a Postman collection from scripts, JSONs, and
@@ -8,9 +8,8 @@ import { __handleErrors, __createTree } from './Utils'
  * @param bundleConfig configuration needed by Kingo in
  * order to run.
  */
-const __kingonize = (bundleConfig: Config): void => {
-    __handleErrors(bundleConfig)
-    __createTree(bundleConfig)
+const kingonize = (bundleConfig: Config): void => {
+    __createCollection(bundleConfig)
 }
 
-export { __kingonize }
+export { kingonize }
