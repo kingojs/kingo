@@ -1,7 +1,8 @@
 import { API } from '../Interfaces/API';
 import { Event } from '../Interfaces/Event';
 import { Config } from '../Interfaces/Config';
-import { existsSync, readdirSync, readFileSync } from 'fs';
+import { existsSync, readdirSync, readFileSync, statSync } from 'fs';
+import { __createTestCase } from './__createTestCase';
 
 const __createAPI = (bundleConfig: Config, api: API, apiPath: string): void => {
     // Check if API folder exists
@@ -47,6 +48,19 @@ const __createAPI = (bundleConfig: Config, api: API, apiPath: string): void => {
             };
 
             api.event.push(event);
+        }
+    }
+
+    const files = readdirSync(apiPath);
+
+    for (const file of files) {
+        if (file[0] !== '.') {
+            const filePath = `${apiPath}/${file}`;
+            const stat = statSync(filePath);
+
+            if (stat.isDirectory()) {
+                __createTestCase(api, file);
+            }
         }
     }
 }

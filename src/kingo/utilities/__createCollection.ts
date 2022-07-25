@@ -1,6 +1,9 @@
+// Interfaces
 import { API } from '../Interfaces/API';
 import { Event } from '../Interfaces/Event';
 import { Config } from '../Interfaces/Config';
+
+// Utilities
 import { __createAPI } from './__createAPI';
 import { __handleErrors } from './__handleErrors';
 
