@@ -7,6 +7,12 @@ const __createTestCase = (config: Config, api: API, apiPath: string, testCaseNam
     const prPath = `${apiPath}/${testCaseName}/${config.prefixes.pr}.js`;
     const testsPath = `${apiPath}/${testCaseName}/${config.prefixes.tests}.js`;
 
+    // Create a "Test Case" object
+    const tc = {
+        event: [] as Event[],
+        name: testCaseName
+    };
+
     if (existsSync(prPath)) {
         // Read script from the pre-request file
         const script = readFileSync(prPath, 'utf-8');
@@ -20,18 +26,8 @@ const __createTestCase = (config: Config, api: API, apiPath: string, testCaseNam
             }
         };
 
-        // Create a "Test Case" object
-        const tc = {
-            event: [] as Event[],
-            name: testCaseName
-        };
-
         // Push the event into the events array
         tc.event.push(event);
-    
-        // Push the "Test Case" object into the
-        // items array
-        api.item.push(tc);
     }
 
     if (existsSync(testsPath)) {
@@ -47,19 +43,13 @@ const __createTestCase = (config: Config, api: API, apiPath: string, testCaseNam
             }
         };
 
-        // Create a "Test Case" object
-        const tc = {
-            event: [] as Event[],
-            name: testCaseName
-        };
-
         // Push the event into the events array
         tc.event.push(event);
-    
-        // Push the "Test Case" object into the
-        // items array
-        api.item.push(tc);
     }
+
+    // Push the "Test Case" object into the
+    // items array
+    api.item.push(tc);
 }
 
 export { __createTestCase };
