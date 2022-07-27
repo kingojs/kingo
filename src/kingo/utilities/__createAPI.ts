@@ -59,7 +59,7 @@ const __createAPI = (bundleConfig: Config, api: API, apiPath: string): void => {
             const stat = statSync(filePath);
 
             if (stat.isDirectory()) {
-                __createTestCase(api, file);
+                __createTestCase(bundleConfig, api, apiPath, file);
             }
         }
     }
