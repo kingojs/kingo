@@ -3,7 +3,6 @@ import { Event } from '../Interfaces/Event';
 import { Config } from "../Interfaces/Config";
 import { Request } from '../Interfaces/Request';
 import { existsSync, readFileSync } from 'fs';
-import { stringify } from "querystring";
 
 const __createTestCase = (config: Config, api: API, apiPath: string, testCaseName: string): void => {
     const prPath = `${apiPath}/${testCaseName}/${config.prefixes.pr}.js`;
