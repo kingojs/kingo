@@ -1,5 +1,5 @@
 {
-  "name": "@kingo/kingo",
+  "name": "@memburg/kingo",
   "version": "1.0.0",
   "description": "Write better test cases",
   "main": "dist/index.js",
