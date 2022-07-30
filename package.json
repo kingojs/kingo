@@ -1,7 +1,7 @@
 {
   "name": "kingo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Write better test cases",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -15,8 +15,8 @@
     "url": "git+https://github.com/memburg/kingo.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ramb Memburg",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/memburg/kingo/issues"
   },
