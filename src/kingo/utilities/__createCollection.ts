@@ -1,3 +1,5 @@
+import { existsSync, readFileSync } from 'fs';
+
 // Interfaces
 import { API } from '../Interfaces/API';
 import { Event } from '../Interfaces/Event';
@@ -23,9 +25,12 @@ const __createCollection = (bundleConfig: Config): void => {
     const collection = {
         info: {
             name: collectionName,
-            schema: "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+            schema: "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            description: undefined as string
         },
-        item: [] as API[]
+        item: [] as API[],
+        event: [] as Event[],
+        variable: [] as object
     };
 
     // Log each API given in APIs array
@@ -45,6 +50,64 @@ const __createCollection = (bundleConfig: Config): void => {
 
         // Push API into array of APIs
         collection.item.push(api);
+    }
+
+    // Append description, pre-request script, and variables.
+    const docsPath = `${bundleConfig.root}/${bundleConfig.prefixes.documentation}.md`;
+    const prPath = `${bundleConfig.root}/${bundleConfig.prefixes.prerequestScript}.js`;
+    const testsPath = `${bundleConfig.root}/${bundleConfig.prefixes.tests}.js`;
+    const variablesPath = `${bundleConfig.root}/${bundleConfig.prefixes.variables}.json`;
+
+    if (existsSync(docsPath)) {
+        const markdown = readFileSync(docsPath, 'utf-8');
+        collection.info.description = markdown;
+    }
+
+    if (existsSync(prPath)) {
+        const script = readFileSync(prPath, 'utf-8');
+
+        const event: Event = {
+            listen: "prerequest",
+            script: {
+                type: "text/javascript",
+                exec: script.split('\r\n')
+            }
+        };
+
+        collection.event.push(event);
+    }
+
+    if (existsSync(testsPath)) {
+        const tests = readFileSync(testsPath, 'utf-8');
+
+        const event: Event = {
+            listen: "test",
+            script: {
+                type: "text/javascript",
+                exec: tests.split('\r\n')
+            }
+        };
+
+        collection.event.push(event);
+    }
+
+    if (existsSync(variablesPath)) {
+        const variables = readFileSync(variablesPath, 'utf-8');
+        const varsJSON = JSON.parse(variables);
+        const varsArray = [];
+
+
+        for (const variable in varsJSON) {
+            const varObj = {
+                key: variable,
+                value: varsJSON[variable],
+                type: "default"
+            };
+
+            varsArray.push(varObj);
+        }
+
+        collection.variable = varsArray;
     }
 
     console.log(JSON.stringify(collection));

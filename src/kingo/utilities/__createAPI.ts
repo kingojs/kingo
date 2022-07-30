@@ -7,8 +7,8 @@ import { __createTestCase } from './__createTestCase';
 const __createAPI = (bundleConfig: Config, api: API, apiPath: string): void => {
     // Check if API folder exists
     if (existsSync(apiPath)) {
-        const prPath = `${apiPath}/${bundleConfig.prefixes.pr}.js`;
-        const docsPath = `${apiPath}/${bundleConfig.prefixes.docs}.md`;
+        const prPath = `${apiPath}/${bundleConfig.prefixes.prerequestScript}.js`;
+        const docsPath = `${apiPath}/${bundleConfig.prefixes.documentation}.md`;
         const testsPath = `${apiPath}/${bundleConfig.prefixes.tests}.js`;
 
         // In case the API has some documentation, add it to it.

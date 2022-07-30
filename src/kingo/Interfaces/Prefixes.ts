@@ -10,10 +10,10 @@
  * @variables {string | null | undefined} variables prefix
  */
 interface Prefixes {
-    url: string
-    pr?: string | null | undefined
+    request: string
+    prerequestScript?: string | null | undefined
     body?: string | null | undefined
-    docs?: string | null | undefined
+    documentation?: string | null | undefined
     tests?: string | null | undefined
     variables?: string | null | undefined
 }

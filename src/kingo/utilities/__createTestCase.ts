@@ -5,9 +5,9 @@ import { Request } from '../Interfaces/Request';
 import { existsSync, readFileSync } from 'fs';
 
 const __createTestCase = (config: Config, api: API, apiPath: string, testCaseName: string): void => {
-    const prPath = `${apiPath}/${testCaseName}/${config.prefixes.pr}.js`;
+    const prPath = `${apiPath}/${testCaseName}/${config.prefixes.prerequestScript}.js`;
     const testsPath = `${apiPath}/${testCaseName}/${config.prefixes.tests}.js`;
-    const urlPath = `${apiPath}/${testCaseName}/${config.prefixes.url}.json`;
+    const urlPath = `${apiPath}/${testCaseName}/${config.prefixes.request}.json`;
     const bodyPath = `${apiPath}/${testCaseName}/${config.prefixes.body}.json`;
 
     // Create a "Test Case" object
