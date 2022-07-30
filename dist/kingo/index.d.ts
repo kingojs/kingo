@@ -1,0 +1,1 @@
+export { kingonize } from './kingonize';
