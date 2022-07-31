@@ -58,10 +58,10 @@ This is the folder structure to be followed in order to generate the Postman col
     └── prerequest.js
 ```
 
-Import `kingonize` from `kingo` and send an object as the one bellow and provided the required fields.
+Import `kingonize` from `@memburg/kingo` and send an object as the one bellow and provided the required fields.
 
 ```js
-import { kingonize } from 'kingo';
+import { kingonize } from '@memburg/kingo';
 
 kingonize({
     root: './collection', // files location
