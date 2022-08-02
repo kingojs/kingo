@@ -1,5 +1,5 @@
 {
-  "name": "@memburg/kingo",
+  "name": "@kingojs/kingo",
   "version": "1.7.1",
   "description": "Write better test cases",
   "main": "dist/index.js",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/memburg/kingo.git"
+    "url": "git+https://github.com/kingojs/kingo.git"
   },
-  "keywords": [],
+  "keywords": ["testing", "postman", "typescript"],
   "author": "Ramb Memburg",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/memburg/kingo/issues"
+    "url": "https://github.com/kingojs/kingo/issues"
   },
-  "homepage": "https://github.com/memburg/kingo#readme",
+  "homepage": "https://github.com/kingojs/kingo#readme",
   "devDependencies": {
     "@types/node": "^18.0.6",
     "typescript": "^4.7.4"

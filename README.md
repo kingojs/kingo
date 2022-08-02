@@ -58,10 +58,10 @@ This is the folder structure to be followed in order to generate the Postman col
     └── prerequest.js
 ```
 
-Import `kingonize` from `@memburg/kingo` and send an object as the one bellow and provided the required fields.
+Import `kingonize` from `@kingojs/kingo` and send an object as the one bellow and provided the required fields.
 
 ```js
-import { kingonize } from '@memburg/kingo';
+import { kingonize } from '@kingojs/kingo';
 
 kingonize({
     root: './collection', // files location
@@ -88,7 +88,16 @@ Finally, execute the script as any other NodeJS file.
 node main.js
 ```
 
-*It is important to notice that it is not necessary to create all the different type of files, notices how `API_02` does not contain a `prerequest.js` file, whilst `API_01` does.*
+*Note I: It is important to notice that it is not necessary to create all the different type of files, notices how `API_02` does not contain a `prerequest.js` file, whilst `API_01` does.*
+
+*Note II: Make sure the `request.json` file has the following structure:*
+
+```json
+{
+    "method": "get",
+    "request_url": "{{base_url}}/test"
+}
+```
 
 ## Reporting
 
