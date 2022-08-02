@@ -1,8 +1,8 @@
 # 金吾 (Kingo)
 
-[![NPM Version](https://img.shields.io/npm/v/@memburg/kingo)](https://www.npmjs.com/package/@memburg/kingo)
-[![NPM Weekly Downloads](https://img.shields.io/npm/dw/@memburg/kingo)](https://www.npmjs.com/package/@memburg/kingo)
-[![NPM Downloads](https://img.shields.io/npm/dt/@memburg/kingo)](https://www.npmjs.com/package/@memburg/kingo)
+[![NPM Version](https://img.shields.io/npm/v/@kingojs/kingo)](https://www.npmjs.com/package/@kingojs/kingo)
+[![NPM Weekly Downloads](https://img.shields.io/npm/dw/@kingojs/kingo)](https://www.npmjs.com/package/@kingojs/kingo)
+[![NPM Downloads](https://img.shields.io/npm/dt/@kingojs/kingo)](https://www.npmjs.com/package/@kingojs/kingo)
 
 Kingo is a REST API testing framework with the following goals:
 
