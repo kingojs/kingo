@@ -1,6 +1,6 @@
 {
   "name": "@kingojs/kingo",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Write better test cases",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
