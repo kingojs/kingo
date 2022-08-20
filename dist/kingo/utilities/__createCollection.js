@@ -5,6 +5,7 @@ const fs_1 = require("fs");
 // Utilities
 const __createAPI_1 = require("./__createAPI");
 const __handleErrors_1 = require("./__handleErrors");
+const __writeCollection_1 = require("./__writeCollection");
 /**
  *
  * @param bundleConfig
@@ -86,8 +87,7 @@ const __createCollection = (bundleConfig) => {
         }
         collection.variable = varsArray;
     }
-    console.log(JSON.stringify(collection));
-    console.log(collection);
+    (0, __writeCollection_1.__writeCollection)(collection);
 };
 exports.__createCollection = __createCollection;
 //# sourceMappingURL=__createCollection.js.map

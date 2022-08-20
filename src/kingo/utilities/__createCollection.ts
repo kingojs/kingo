@@ -8,6 +8,7 @@ import { Config } from '../Interfaces/Config';
 // Utilities
 import { __createAPI } from './__createAPI';
 import { __handleErrors } from './__handleErrors';
+import { __writeCollection } from './__writeCollection';
 
 /**
  * 
@@ -109,9 +110,8 @@ const __createCollection = (bundleConfig: Config): void => {
 
         collection.variable = varsArray;
     }
-
-    console.log(JSON.stringify(collection));
-    console.log(collection);
+    
+    __writeCollection(collection);
 }
 
 export { __createCollection };

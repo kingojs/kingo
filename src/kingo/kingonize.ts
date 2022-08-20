@@ -9,7 +9,7 @@ import { __createCollection } from './utilities/__createCollection'
  * order to run.
  */
 const kingonize = (bundleConfig: Config): void => {
-    __createCollection(bundleConfig)
+    __createCollection(bundleConfig);
 }
 
-export { kingonize }
+export { kingonize };
