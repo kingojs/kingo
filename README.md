@@ -1,5 +1,7 @@
 # 金吾 (Kingo)
 
+![](./media/banner.png)
+
 [![NPM Version](https://img.shields.io/npm/v/@kingojs/kingo)](https://www.npmjs.com/package/@kingojs/kingo)
 [![NPM Weekly Downloads](https://img.shields.io/npm/dw/@kingojs/kingo)](https://www.npmjs.com/package/@kingojs/kingo)
 [![NPM Downloads](https://img.shields.io/npm/dt/@kingojs/kingo)](https://www.npmjs.com/package/@kingojs/kingo)
@@ -8,8 +10,8 @@ Kingo is a REST API testing framework with the following goals:
 
 - Generate Postman collections
 - Be an easy-to-learn tool
-- Be a friendly tool for developers and QA Engineers
-- Have organised code
+- Be a friendly tool for Developers and QA Engineers
+- Have organized code
 - Be able to write test cases from any text-editor/IDE
 - Get rid of Postman UI
 
@@ -58,7 +60,7 @@ This is the folder structure to be followed in order to generate the Postman col
     └── prerequest.js
 ```
 
-Import `kingonize` from `@kingojs/kingo` and send an object as the one bellow and provided the required fields.
+Import `kingonize` from `@kingojs/kingo` and send an object as the one bellow and provide the required fields.
 
 ```js
 import { kingonize } from '@kingojs/kingo';
@@ -82,7 +84,7 @@ kingonize({
 });
 ```
 
-Finally, execute the script as any other NodeJS file.
+Finally, execute the script as a normal NodeJS file.
 
 ```
 node main.js
