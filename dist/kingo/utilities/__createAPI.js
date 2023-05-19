@@ -9,6 +9,7 @@ const __createAPI = (bundleConfig, api, apiPath) => {
         const prPath = `${apiPath}/${bundleConfig.prefixes.prerequestScript}.js`;
         const docsPath = `${apiPath}/${bundleConfig.prefixes.documentation}.md`;
         const testsPath = `${apiPath}/${bundleConfig.prefixes.tests}.js`;
+        const authPath = `${apiPath}/${bundleConfig.prefixes.auth}.json`;
         // In case the API has some documentation, add it to it.
         if ((0, fs_1.existsSync)(docsPath)) {
             const markdown = (0, fs_1.readFileSync)(docsPath, 'utf-8');
@@ -40,6 +41,33 @@ const __createAPI = (bundleConfig, api, apiPath) => {
                 }
             };
             api.event.push(event);
+        }
+        // Authorization config will be read from the JSON file and appended at API level
+        if ((0, fs_1.existsSync)(authPath)) {
+            // { "type": "awsv4", "secretKey": "QWERTY", "accessKey": "QWERTY" }
+            const authConfig = (0, fs_1.readFileSync)(testsPath, 'utf-8');
+            const authJSON = JSON.parse(authConfig);
+            const authType = authJSON.type;
+            // Build auth object
+            const auth = {
+                type: authType,
+                authType: undefined
+            };
+            const authProps = [];
+            // Build auth array content
+            for (const key in authJSON) {
+                // skip key since it was already taken
+                if (key !== 'type') {
+                    const temporalObj = {
+                        "key": key,
+                        "value": authJSON[key],
+                        "type": typeof authJSON[key]
+                    };
+                    authProps.push(temporalObj);
+                }
+            }
+            auth.authType = authProps;
+            api.auth = auth;
         }
     }
     const files = (0, fs_1.readdirSync)(apiPath);

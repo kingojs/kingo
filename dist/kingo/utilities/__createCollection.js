@@ -33,7 +33,8 @@ const __createCollection = (bundleConfig) => {
             name: apiName,
             item: [],
             event: [],
-            description: undefined
+            description: undefined,
+            auth: undefined
         };
         // Build API path
         const apiPath = `${bundleConfig.root}/${apiName}`;
