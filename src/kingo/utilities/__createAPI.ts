@@ -54,7 +54,7 @@ const __createAPI = (bundleConfig: Config, api: API, apiPath: string): void => {
         // Authorization config will be read from the JSON file and appended at API level
         if (existsSync(authPath)) {
             // { "type": "awsv4", "secretKey": "QWERTY", "accessKey": "QWERTY" }
-            const authConfig = readFileSync(testsPath, 'utf-8');
+            const authConfig = readFileSync(authPath, 'utf-8');
             const authJSON = JSON.parse(authConfig);
             const authType = authJSON.type;
 
