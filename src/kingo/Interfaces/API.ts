@@ -5,6 +5,7 @@ interface API {
     item: object[];
     event: Event[];
     description: string;
+    auth: object;
 };
 
 export { API };

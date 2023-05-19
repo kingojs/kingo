@@ -40,7 +40,8 @@ const __createCollection = (bundleConfig: Config): void => {
             name: apiName,
             item: [] as object[],
             event: [] as Event[],
-            description: undefined as string
+            description: undefined as string,
+            auth: undefined as object
         };
 
         // Build API path
@@ -110,7 +111,7 @@ const __createCollection = (bundleConfig: Config): void => {
 
         collection.variable = varsArray;
     }
-    
+
     __writeCollection(collection);
 }
 
