@@ -57,12 +57,10 @@ const __createAPI = (bundleConfig: Config, api: API, apiPath: string): void => {
             const authConfig = readFileSync(authPath, 'utf-8');
             const authJSON = JSON.parse(authConfig);
             const authType = authJSON.type;
+            const authStrTemplate = `{ "type": "${authType}", "${authType}": [] }`;
 
             // Build auth object
-            const auth = {
-                type: authType,
-                authType: undefined as object[]
-            }
+            const auth = JSON.parse(authStrTemplate);
 
             const authProps = [] as object[];
 
